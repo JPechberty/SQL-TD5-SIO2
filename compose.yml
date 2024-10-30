@@ -6,13 +6,13 @@ services:
 #      - "3306:3306"
     restart: always
     environment:
-      MYSQL_DATABASE: app_db
+      #MYSQL_DATABASE: app_db
       #MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
       MYSQL_ROOT_PASSWORD: root
       TZ: Europe/Paris
     volumes:
       - ./var/dbdata:/var/lib/mysql
-      - ./docs/app_db.sql:/docker-entrypoint-initdb.d/app_db.sql
+      - ./docs/databases:/docker-entrypoint-initdb.d
   phpmyadmin:
     container_name: SQL-TD5-SIO2-pma
     image: phpmyadmin/phpmyadmin
